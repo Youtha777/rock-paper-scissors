@@ -38,6 +38,8 @@
 console.log("Hello World!")
 
 let choice = ["rock", "paper", "scissors"]
+let computerScore = 0;
+let humanScore = 0;
 
 //Invoke function to get computer's choice
 getComputerChoice()
