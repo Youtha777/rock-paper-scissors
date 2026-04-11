@@ -35,23 +35,25 @@
 
 
 
-
-
-
-
-
-
-
 console.log("Hello World!")
+
+let choice = ["rock", "paper", "scissors"]
 
 //Invoke function to get computer's choice
 getComputerChoice()
+console.log(getHumanChoice())
+
+
+//Get players choice
+function getHumanChoice(){
+  let userPick = prompt("Make a selection.  Type 1 for rock, 2 for paper or 3 for scissors. ");
+  return choice[parseInt(userPick) - 1];
+}
 
 //Declare a function to generate the computer's choice
 function getComputerChoice()
 {
-  let choice = ["rock", "paper", "scissors"]
-
+  
   let random = Math.floor((Math.random() * 3))
 
   return console.log(choice[random])
