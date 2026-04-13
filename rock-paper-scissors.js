@@ -31,15 +31,29 @@
 
 
 
-let computerScore = 0;
-let humanScore = 0;
+
 
 // //Invoke function to get computer's choice
 // getComputerChoice()
 // console.log(getHumanChoice())
 
-playRound(getHumanChoice(), getComputerChoice());
-console.log(humanScore + ", " + computerScore);
+// playRound(getHumanChoice(), getComputerChoice());
+// console.log(humanScore + ", " + computerScore);
+
+playGame();
+
+
+function playGame ()
+{
+  let computerScore = 0;
+  let humanScore = 0;
+
+  for (let i = 0; i < 5; i++){
+    playRound(getHumanChoice(), getComputerChoice());
+  } 
+
+  console.log("Final Score - Human: " + humanScore + " Computer: " + computerScore);
+}
 
 
 function playRound(humanChoice, computerChoice){
