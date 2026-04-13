@@ -31,33 +31,75 @@
 
 
 
-
-
-
-
-console.log("Hello World!")
-
-let choice = ["rock", "paper", "scissors"]
 let computerScore = 0;
 let humanScore = 0;
 
-//Invoke function to get computer's choice
-getComputerChoice()
-console.log(getHumanChoice())
+// //Invoke function to get computer's choice
+// getComputerChoice()
+// console.log(getHumanChoice())
 
+playRound(getHumanChoice(), getComputerChoice());
+console.log(humanScore + ", " + computerScore);
+
+
+function playRound(humanChoice, computerChoice){
+  if (humanChoice == "rock")
+    if (computerChoice == "rock")
+    {
+      console.log("It is a tie!");
+    }
+    else if (computerChoice == "paper")
+    {
+      computerScore +=1;
+      console.log("You lose!  Paper beats Rock");
+    }
+    else{
+      humanScore +=1;
+      console.log("You win! Rock beat scissors");
+    }
+  else if(humanChoice == "paper"){
+    if (computerChoice == "rock")
+    {
+      console.log("You win!  Paper beats Rock");
+      humanScore +=1;
+    }
+    else if(computerChoice == "paper")
+    {
+      console.log("It is a tie!");
+    }
+    else {
+      console.log("You lose!  Scissors beat Paper.");
+      computerScore +=1;
+    }
+  }
+  else {
+    if (computerChoice == "rock")
+    {
+      computerScore += 1;
+      console.log("You lose! Rock beat Scissors.")
+    }
+    else if(computerChoice == "paper"){
+      humanScore += 1;
+      console.log("You win! Scissors beat Paper.")
+    }
+    else {
+      console.log("It is a tie!")
+    }
+  }
+}
 
 //Get players choice
 function getHumanChoice(){
-  let userPick = prompt("Make a selection.  Type 1 for rock, 2 for paper or 3 for scissors. ");
-  return choice[parseInt(userPick) - 1];
+  let userPick = prompt("Make a selection.  Type 1 for rock, 2 for paper or 3 for scissors. ")
+  return userPick.toLowerCase();
 }
 
 //Declare a function to generate the computer's choice
 function getComputerChoice()
 {
-  
+  let choice = ["rock", "paper", "scissors"]
   let random = Math.floor((Math.random() * 3))
 
-  return console.log(choice[random])
+  return choice[random]
 }
 
